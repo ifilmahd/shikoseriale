@@ -10,13 +10,7 @@
 
     <!-- Other pages -->
     <url>
-        <loc>https://yourwebsite.com/page1</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://yourwebsite.com/page2</loc>
+        <loc>https://serialedhefilma.one/movie-details.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
