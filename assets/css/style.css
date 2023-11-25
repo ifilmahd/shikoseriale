@@ -95,7 +95,7 @@ img,
 span,
 input,
 button,
-ion-icon { display: block; }
+ion-icon { display: ; }
 
 input {
   font: inherit;
