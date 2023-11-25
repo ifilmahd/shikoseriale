@@ -414,7 +414,7 @@
               <img src="./assets/images/service-banner.gif" alt="banner hallowen">
             </figure>
 
-            <a href="." download class="service-btn">
+            <a href="#" download class="service-btn">
               <span>Watch</span>
 
               <ion-icon name="download-outline"></ion-icon>
@@ -423,14 +423,14 @@
 
           <div class="service-content">
 
-            <p class="service-subtitle">Mirësevini</p>
+            <p class="service-subtitle">Welcome</p>
 
-            <h2 class="h2 service-title">Download Your Shows Watch Offline.</h2>
+            <h2 class="h2 service-title">Mirësevini në faqen tonë.</h2>
 
             <p class="service-text">
-              Mirësevini në ShikoSeriale, jemi të gëzuar që keni zgjedhur të na bashkoheni për një përvojë streaming të veçantë.
+              Jemi të gëzuar që keni zgjedhur të na bashkoheni për një përvojë streaming të veçantë.
               Ne ofrojmë një koleksion të gjerë të filmave dhe serialeve me
-              përditësime të rregullta, duke ju siguruar që të mos humbisni asnjë serial të ri ose film të fundit.
+              përditësime të rregullta, duke ju siguruar që të mos humbisni asnjë serial të ri ose film.
               Vazhdimisht zgjerojmë koleksionin tonë për të plotësuar preferencat tuaja.
             </p>
 
@@ -444,10 +444,10 @@
                   </div>
 
                   <div class="card-content">
-                    <h3 class="h3 card-title">Argëtim i Dyfisht - Filma dhe Seriale.</h3>
+                    <h3 class="h3 card-title">Argëtim i Dyfisht - Filma dhe Seriale</h3>
 
                     <p class="card-text">
-                      Zhyteni në një botë argëtimi pa pushim. Kaloni pa probleme nga një episod në tjetrin.
+                      Zhyteni në një botë argëtimi pa pushim. Kaloni pa problem nga një episod në tjetrin.
                     </p>
                   </div>
 
@@ -462,7 +462,7 @@
                   </div>
 
                   <div class="card-content">
-                    <h3 class="h3 card-title">Shiko Kudo.</h3>
+                    <h3 class="h3 card-title">Shiko Kudo</h3>
 
                     <p class="card-text">
                       Shijoni serialet tuaja të preferuara në çdo pajisje, desktop, tablet, dhe telefona celularë.
@@ -983,25 +983,23 @@
         - #CTA
       -->
 
-      <section class="cta">
+ <!-- Placeholder for the subscription form -->
+    <div id="subscribeFormContainer"></div>
+
+    <!-- Section for the provided HTML code -->
+    <section class="cta">
         <div class="container">
-
-          <div class="title-wrapper">
-            <h2 class="cta-title">SUBSCRIBE.</h2>
-
-            <p class="cta-text">
-              Enter your email to subscribe.
-            </p>
-          </div>
-
-          <form action="" class="cta-form">
-            <input type="email" name="email" required placeholder="Enter your email" class="email-field">
-
-            <button type="submit" class="cta-form-btn">Get started</button>
-          </form>
-
+            <div class="title-wrapper">
+                <h2 class="cta-title">SUBSCRIBE</h2>
+                <p class="cta-text">Enter your email to subscribe</p>
+            </div>
+            
+            <!-- This is where the dynamically created form will be placed -->
+            <div id="dynamicSubscribeForm"></div>
         </div>
-      </section>
+    </section>
+
+    <script src="subscribe.js"></script>
 
     </article>
   </main>
