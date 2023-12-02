@@ -214,15 +214,30 @@ Në serialin numër 1 në shikueshmëri, veçanërisht nga të rinjtë.
             </p>
 
             <div class="details-actions">
+  <button class="share" onclick="shareLink()">
+    <ion-icon name="share-social"></ion-icon>
+    <span>Share</span>
+  </button>
+</div>
 
-              <button class="share">
-                <ion-icon name="share-social"></ion-icon>
-
-                <span>Share</span>
-              </button>
+<script>
+  function shareLink() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Your Page Title',
+        text: 'Check out this link!',
+        url: window.location.href
+      })
+        .then(() => console.log('Shared successfully'))
+        .catch((error) => console.error('Error sharing:', error));
+    } else {
+      // Fallback behavior for browsers that don't support the Share API
+      alert('Sharing is not supported in your browser.');
+    }
+  }
+</script>
 
               <div class="title-wrapper">
-                <p class="title">4 Sezone </p>
 
                 <p class="text">ShikoSeriale</p>
               </div>
