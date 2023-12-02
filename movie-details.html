@@ -159,9 +159,14 @@
 
             <img src="./assets/images/cukur.jpg" alt="Cukur movie poster">
 
-            <button class="play-btn">
+            <button class="play-btn"onclick="openShikoSeriale()">
               <ion-icon name="play-circle-outline"></ion-icon>
             </button>
+            <script>
+            function openShikoSeriale() {
+          window.open('https://shikoseriale.me', '_blank');
+                    }
+             </script>
 
           </figure>
 
@@ -224,7 +229,7 @@ Në serialin numër 1 në shikueshmëri, veçanërisht nga të rinjtë.
   function shareLink() {
     if (navigator.share) {
       navigator.share({
-        title: 'Your Page Title',
+        title: 'Seriale dhe Filma',
         text: 'Check out this link!',
         url: window.location.href
       })
@@ -236,19 +241,6 @@ Në serialin numër 1 në shikueshmëri, veçanërisht nga të rinjtë.
     }
   }
 </script>
-
-        
-
-              <button class="btn btn-primary" onclick="openShikoSeriale()">
-               <ion-icon name="play"></ion-icon>
-                <span>Shiko Tani</span>
-                </button>
-
-                  <script>
-            function openShikoSeriale() {
-          window.open('https://shikoseriale.me', '_blank');
-                    }
-             </script>
 
             </div>
 
