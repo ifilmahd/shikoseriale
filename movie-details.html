@@ -227,9 +227,11 @@ Në serialin numër 1 në shikueshmëri, veçanërisht nga të rinjtë.
 
 <script>
   function shareLink() {
+    var pageTitle = document.title;
+
     if (navigator.share) {
       navigator.share({
-        title: 'Seriale dhe Filma',
+        title: pageTitle,
         text: 'Check out this link!',
         url: window.location.href
       })
