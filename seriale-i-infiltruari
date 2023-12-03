@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Infiltruari - Me titra shqip</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon1.ico" type="image/x-icon">
+  <link rel="icon" href="./favicon1.ico" type="image/x-icon">
+
+    <!-- Cache-Control Header for Favicon -->
+    <link rel="icon" href="./favicon1.ico" type="image/x-icon" sizes="16x16" />
+    <link rel="icon" href="./favicon1.ico" type="image/x-icon" sizes="32x32" />
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="#top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <div class="overlay" data-overlay></div>
+
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.svg" alt="logo">
+      </a>
+
+      <div class="header-actions">
+
+        <button class="search-btn">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+
+        <div class="lang-wrapper">
+          <label for="language">
+            <ion-icon name="globe-outline"></ion-icon>
+          </label>
+
+          <select name="language" id="language">
+            <option value="en">EN</option>
+          </select>
+        </div>
+
+        <button class="btn btn-primary">Sign in</button>
+
+      </div>
+
+      <button class="menu-open-btn" data-menu-open-btn>
+        <ion-icon name="reorder-two"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+
+          <a href="./index.html" class="logo">
+            <img src="./assets/images/logo.svg" alt=" logo">
+          </a>
+
+          <button class="menu-close-btn" data-menu-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="./index.html" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="https://shikoseriale.me/movies/" class="navbar-link">Filma</a>
+          </li>
+
+          <li>
+            <a href="https://shikoseriale.me/tvshows/" class="navbar-link">Seriale</a>
+          </li>
+
+          <li>
+            <a href="https://shikoseriale.me/trending/" class="navbar-link">Trending</a>
+          </li>
+
+        </ul>
+
+        <ul class="navbar-social-list">
+
+          <li>
+            <a href="https://twitter.com/serialshiko/" class="navbar-social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.facebook.com/shikoseriale.in" class="navbar-social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.pinterest.com/shikoserial" class="navbar-social-link">
+              <ion-icon name="logo-pinterest"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/shikoseriale.in" class="navbar-social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #MOVIE DETAIL
+      -->
+
+      <section class="movie-detail">
+        <div class="container">
+
+          <figure class="movie-detail-banner">
+
+            <img src="./assets/images/icerde.jpg" alt="icerde movie poster">
+
+            <button class="play-btn"onclick="openShikoSeriale()">
+              <ion-icon name="play-circle-outline"></ion-icon>
+            </button>
+            <script>
+            function openShikoSeriale() {
+          window.open('https://shikoseriale.me/tvshows/i-infiltruari-icerde/', '_blank');
+                    }
+             </script>
+
+          </figure>
+
+          <div class="movie-detail-content">
+
+            <p class="detail-subtitle">1 Sezon</p>
+
+            <h1 class="h1 detail-title">
+              I Infiltruari - Me titra shqip
+            </h1>
+
+            <div class="meta-wrapper">
+
+              <div class="badge-wrapper">
+                <div class="badge badge-fill">PG 13</div>
+
+                <div class="badge badge-outline">HD</div>
+              </div>
+
+              <div class="ganre-wrapper">
+                <span>Aksion</span>
+
+                <a href="#">Krim,</a>
+
+                <a href="#">Triller</a>
+
+              </div>
+
+              <div class="date-time">
+
+                <div>
+                  <ion-icon name="calendar-outline"></ion-icon>
+
+                  <time datetime="2016">2016</time>
+                </div>
+
+                <div>
+                  <ion-icon name="time-outline"></ion-icon>
+
+                  <time datetime="PT115M">120 min</time>
+                </div>
+
+              </div>
+
+            </div>
+
+            <p class="storyline">
+              Një histori e dy vëllezërve të ndarë nga njëri-tjetri. 
+              Tani, në anët e kundërta të ligjit, vëllezërit Sarp dhe Mert janë hedhur kundër njëri-tjetrit, pa dijeni për vëllazërinë e tyre.
+            </p>
+
+            <div class="details-actions">
+  <button class="share" onclick="shareLink()">
+    <ion-icon name="share-social"></ion-icon>
+    <span>Share</span>
+  </button>
+</div>
+
+<script>
+  function shareLink() {
+    var pageTitle = document.title;
+
+    if (navigator.share) {
+      navigator.share({
+        title: pageTitle,
+        url: window.location.href
+      })
+        .then(() => console.log('Shared successfully'))
+        .catch((error) => console.error('Error sharing:', error));
+    } else {
+      // Fallback behavior for browsers that don't support the Share API
+      alert('Sharing is not supported in your browser.');
+    }
+  }
+</script>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+     <!-- 
+        - #SERIALET
+      -->
+
+      <section class="upcoming">
+        <div class="container">
+
+          <div class="flex-wrapper">
+
+            <div class="title-wrapper">
+              <p class="section-subtitle">Online Streaming</p>
+
+              <h2 class="h2 section-title">Serialet më të ndjekur</h2>
+            </div>
+
+          </div>
+
+          <ul class="movies-list  has-scrollbar">
+
+            <li>
+              <div class="movie-card">
+
+                <a href="./seriale-cukur.html">
+                  <figure class="card-banner">
+                    <img src="./assets/images/cukur.jpg" alt="Cukur movie poster">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./seriale-cukur.html">
+                    <h3 class="card-title">Cukur</h3>
+                  </a>
+
+                  <time datetime="2016">2016</time>
+                </div>
+
+                <div class="card-meta">
+                  <div class="badge badge-outline">HD</div>
+
+                  <div class="duration">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="PT137M">120 min</time>
+                  </div>
+
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+
+                    <data>9.6</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="movie-card">
+
+                <a href="./seriale-themelimi-osman.html">
+                  <figure class="card-banner">
+                    <img src="./assets/images/kurulus_osman.jpg"
+                      alt="Themelimi Osman movie poster">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./seriale-themelimi-osman.html">
+                    <h3 class="card-title">Themelimi Osman</h3>
+                  </a>
+
+                  <time datetime="2017">2017</time>
+                </div>
+
+                <div class="card-meta">
+                  <div class="badge badge-outline">HD</div>
+
+                  <div class="duration">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="PT126M">120 min</time>
+                  </div>
+
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+
+                    <data>8.9</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="movie-card">
+
+                  <figure class="card-banner">
+                    <img src="./assets/images/icerde.jpg" alt="Icerde movie poster">
+                  </figure>
+
+                <div class="title-wrapper">
+                    <h3 class="card-title">I Infiltruari</h3>
+
+                  <time datetime="2016">2016</time>
+                </div>
+
+                <div class="card-meta">
+                  <div class="badge badge-outline">HD</div>
+
+                  <div class="duration">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="">120 min</time>
+                  </div>
+
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+
+                    <data>9</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="movie-card">
+
+                <a href="./seriale-yabani.html">
+                  <figure class="card-banner">
+                    <img src="./assets/images/yabani.jpg"
+                      alt="yabani movie poster">
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./seriale-yabani.html">
+                    <h3 class="card-title">Yabani</h3>
+                  </a>
+
+                  <time datetime="2023">2023</time>
+                </div>
+
+                <div class="card-meta">
+                  <div class="badge badge-outline">HD</div>
+
+                  <div class="duration">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="PT107M">120 min</time>
+                  </div>
+
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+
+                    <data>9</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand-wrapper">
+
+          <a href="./index.html" class="logo">
+            <img src="./assets/images/logo.svg" alt=" logo">
+          </a>
+
+          <ul class="footer-list">
+
+           <li>
+              <a href="./index.html" class="footer-link">Home</a>
+            </li>
+
+            <li>
+              <a href="https://shikoseriale.me/movies/" class="footer-link" target="_blank">Filma</a>
+            </li>
+
+            <li>
+              <a href="https://shikoseriale.me/tvshows/" class="footer-link" target="_blank">Seriale</a>
+            </li>
+
+            <li>
+              <a href="https://shikoseriale.me/trending/" class="footer-link" target="_blank">Trending </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="quicklink-wrapper">
+
+          <ul class="quicklink-list">
+
+            <li>
+              <a href="#" class="quicklink-link">Faq</a>
+            </li>
+
+            <li>
+              <a href="https://shikoseriale.me/contact/" class="quicklink-link" target="_blank">Help center</a>
+            </li>
+
+            <li>
+              <a href="https://shikoseriale.me/dmca/" class="quicklink-link" target="_blank">DMCA</a>
+            </li>
+
+            <li>
+              <a href="https://shikoseriale.me/privacy-policy/" class="quicklink-link" target="_blank">Privacy</a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="https://www.facebook.com/shikoseriale.in" class="social-link" target="_blank">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://twitter.com/serialshiko" class="social-link" target="_blank">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.pinterest.com/shikoserial/" class="social-link" target="_blank">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.instagram.com/shikoseriale.me/" class="social-link" target="_blank">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2023 <a href="#">ShikoSeriale</a>. All Rights Reserved
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #GO TO TOP
+  -->
+
+  <a href="#top" class="go-top" data-go-top>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
