@@ -1,0 +1,368 @@
+(function($) {
+    $(document).ready(function() {
+        $('.client-coment-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:true,
+            dots:true,
+            autoplay: true,
+            slideSpeed: 500,
+            paginationSpeed: 500,
+            autoplayTimeout: 5000,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:1
+                },
+                1000:{
+                    items:1
+                }
+            }
+        });
+    });
+
+    $(document).ready(function() {
+        $('.js-example-basic-single').select2();
+    });
+
+    $('.new-demanded-slider').owlCarousel({
+        loop:false,
+        margin:2,
+        nav:true,
+        navText: ['<span class="iconify" data-icon="ci:chevron-big-left"></span>', '<span class="iconify" data-icon="ci:chevron-big-right"></span>'],
+        responsive:{
+            0:{
+                items:1
+            },
+            576:{
+                items:2
+            },
+            768:{
+                items:3
+            },
+            1000:{
+                items:3
+            }
+        }
+    });
+
+    // $('.chart').easyPieChart({
+    //     size: 120,
+    //     barColor: "#ff7700",
+    //     scaleLength: 0,
+    //     lineWidth: 3,
+    //     trackColor: "#000",
+    //     lineCap: "circle",
+    //     animate: 2000,
+    // });
+
+
+   if ($(".rental-detail-sliders").length > 0) {
+       var sync1 = $(".search-dtl-slider");
+       var sync2 = $(".navigation-thumbs");
+       var thumbnailItemClass = '.owl-item';
+       var slides = sync1.owlCarousel({
+           video: true,
+           startPosition: 0,
+           items: 1,
+           loop: true,
+           margin: 10,
+           autoplay: true,
+           autoplayTimeout: 6000,
+           autoplayHoverPause: false,
+           nav: false,
+           dots: false
+       }).on('changed.owl.carousel', syncPosition);
+
+       function syncPosition(el) {
+           $owl_slider = $(this).data('owl.carousel');
+           var loop = $owl_slider.options.loop;
+
+           if (loop) {
+               var count = el.item.count - 1;
+               var current = Math.round(el.item.index - (el.item.count / 2) - .5);
+               if (current < 0) {
+                   current = count;
+               }
+               if (current > count) {
+                   current = 0;
+               }
+           } else {
+               var current = el.item.index;
+           }
+
+           var owl_thumbnail = sync2.data('owl.carousel');
+           var itemClass = "." + owl_thumbnail.options.itemClass;
+
+
+           var thumbnailCurrentItem = sync2
+               .find(itemClass)
+               .removeClass("synced")
+               .eq(current);
+
+           thumbnailCurrentItem.addClass('synced');
+
+           if (!thumbnailCurrentItem.hasClass('active')) {
+               var duration = 300;
+               sync2.trigger('to.owl.carousel', [current, duration, true]);
+           }
+       }
+
+       var thumbs = sync2.owlCarousel({
+           startPosition: 0,
+           items: 4,
+           loop: false,
+           margin: 10,
+           autoplay: false,
+           nav: false,
+           dots: false,
+           responsive: {
+               320: {
+                   items: 2
+               },
+               576: {
+                   items: 3
+               },
+               768: {
+                   items: 3
+               },
+               992: {
+                   items: 4
+               }
+           },
+           onInitialized: function (e) {
+               var thumbnailCurrentItem = $(e.target).find(thumbnailItemClass).eq(this._current);
+               thumbnailCurrentItem.addClass('synced');
+           },
+       })
+           .on('click', thumbnailItemClass, function (e) {
+               e.preventDefault();
+               var duration = 300;
+               var itemIndex = $(e.target).parents(thumbnailItemClass).index();
+               sync1.trigger('to.owl.carousel', [itemIndex, duration, true]);
+           }).on("changed.owl.carousel", function (el) {
+               var number = el.item.index;
+               $owl_slider = sync1.data('owl.carousel');
+               $owl_slider.to(number, 100, true);
+           });
+   }
+
+
+
+      if($(".form-dtl").length > 0 ) {
+          var dateToday = new Date();
+          $('.rent-front-datepicker').datepicker({
+              language: {
+                  days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                  daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                  daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+                  months: ['January','February','March','April','May','June', 'July','August','September','October','November','December'],
+                  monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                  today: 'Today',
+                  clear: 'Clear',
+              },
+              timepicker: true,
+              minDate: dateToday
+          });
+
+          var g_select = $('#product-type').find(":selected").val();
+          if (g_select == 'variable') {
+              $('#rental_meta_fields').show();
+          } else {
+              $('#rental_meta_fields').hide();
+          }
+
+          $("#product-type").change(function () {
+              var select_val = $('#product-type').find(":selected").val();
+              if (select_val == 'variable') {
+                  $('#rental_meta_fields').show();
+              } else {
+                  $('#rental_meta_fields').hide();
+              }
+          });
+      }
+
+
+
+
+    if($(".form-dtl").length > 0 ) {
+        $('#drop').blur(doClick);
+        $('input[name="extra').click(doClick);
+        var extra_h=0;
+        var extra_d=0;
+        function doClick(e){
+           var favorite = [];
+            html_shower =[];
+            html_shower = html_shower.map(Number);
+            var per_hour_price = $("#by-hour").attr("data-hour");
+            var per_day_price = $("#by-day").attr("data-day");
+            var paddress = $("#paddress").val();
+            var daddress = $("#daddress").val();
+            const minute = 1000 * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+            var pickup = $("#pickup").val();
+            var dropit = $("#drop").val();
+            var pick = Date.parse(pickup);
+            var drop = Date.parse(dropit);
+            if(drop > pick) {
+                var total = drop - pick;
+                let total_hour = Math.round(total / hour);
+                let total_day = Math.round(total / day);
+                var reminder_hours_day = total_hour % 24;
+                var reminder_hour_price = reminder_hours_day * per_hour_price;
+                var total_price_hour = per_hour_price * total_hour;
+                var total_price_day = per_day_price * total_day + reminder_hour_price;
+                    if ($(this).prop("checked") == true) {
+                        // html_shower = html_shower.map(Number);
+                        $.each($("input[name='extra']:checked"), function () {
+                            favorite.push($(this).val());
+                            var extra_id = $(this).attr("data-extra");
+                            var qun = parseInt($('#qun' + extra_id).val());
+                            html_shower.push(extra_id);
+                            html_shower = html_shower.map(Number);
+                            favorite = favorite.map(Number);
+                        })
+                        if (html_shower.length != 0) {
+                            for (i = 0; i < html_shower.length; i++) {
+                                var quantity = parseInt($('#qun' + html_shower[i]).val());
+                                var extra_houres;
+                                if (reminder_hours_day > 0) {
+                                    extra_houres = favorite[i];
+                                } else {
+                                    extra_houres = 0;
+                                }
+                                var cnv_number = parseInt(extra_houres);
+                                extra_totalss = quantity * favorite[i];
+                                if (extra_totalss == null || extra_totalss == undefined) {
+                                    extra_totalss = 0;
+                                }
+                                extra_h = total_price_hour += extra_totalss;
+                                extra_d = total_price_day += extra_totalss;
+                                $("#abc" + html_shower[i]).html(extra_totalss);
+                                console.log("#row_style" + html_shower[i]);
+                                $("#row_style" + html_shower[i]).show();
+                            }
+                        }
+                    } else if ($(this).prop("checked") == false) {
+                            var itemtoRemove = $(this).val();
+                            let isnum = /^\d+$/.test(itemtoRemove);
+                          if(isnum==true) {
+                              var extra_id = $(this).attr("data-extra");
+                              var quantity = parseInt($('#qun' + extra_id).val());
+                                extra_totalss = quantity * itemtoRemove;
+                                console.log(extra_h);
+                                console.log(extra_d);
+                               extra_h-=extra_totalss;
+                                extra_d-=extra_totalss;
+                              $("#abc" + extra_id).html('');
+                              $("#row_style" + extra_id).hide();
+                          }
+                    }
+
+                if(extra_h==null || extra_h==undefined || extra_d==null || extra_d==undefined || extra_h==0 || extra_d==0  ){
+                extra_h=total_price_hour;
+                extra_d=total_price_day;
+                 }
+                $("#numh").val(total_hour);
+                $("#numd").val(total_day);
+                $("#by-hour").val(extra_h);
+                $("#by-day").val(extra_d);
+                $("#hour-price-total").html(extra_h);
+                $("#day-price-total").html(extra_d);
+                $("#pick-add").html(paddress);
+                $("#drop-add").html(daddress);
+                $("#p-date").html(pickup);
+                $("#d-date").html(dropit);
+                $("#num-hour").html(total_hour);
+                $("#num-days").html(total_day);
+                $(".rental-price-popup").slideDown();
+
+            }else if(drop <= pick){
+                notify('info','whoops',"Please Input date correctly");
+            }
+
+        }
+
+
+
+        var quantitiy=0;
+        $('.quantity-right-plus').click(function(e){
+            var button_id = $(this).val();
+            e.preventDefault();
+            var quantity = parseInt($('#qun'+button_id).val());
+            $('#qun'+button_id).val(quantity + 1);
+        });
+
+        $('.quantity-left-minus').click(function(e){
+            var button_id = $(this).val();
+            var quantity = parseInt($('#qun'+button_id).val());
+            if(quantity>0){
+                var minu_quantity = $('#qun'+button_id).val(quantity - 1);
+            }
+        });
+
+
+
+
+        $(".book-btn").click(function (e){
+        $.validate({
+            form : '#rental_submission',
+            modules : 'sanitize',
+            validateHiddenInputs : true,
+            validateOnBlur : true,
+            showErrorDialogs : true,
+            //  language : myLanguage,
+            onSuccess : function() {
+                $.post(front_varible.ajax_front,{action :'product_update_price',security:get_strings.ajax_nonce,rental_data:$( "form[name='rental_submission']").serialize()}).done( function(response)
+                {
+                    if (true === response.success) {
+                        notify('success','congratulations',response.data.message);
+                        window.location	=	response.data.carturl;
+                    }
+                    else {
+                        notify('info','whoops',response.data.message);
+                         window.location = response.data.carturl;
+                    }
+                });
+                 return false;
+            }
+
+        });
+        })
+
+
+
+    }
+
+    if ($(".extra-resources").length > 0) {
+        $('input[name="extra"]').click(function () {
+            if ($(this).prop("checked") == true) {
+                $.each($("input[name='extra']:checked"), function () {
+                    var check_array = [];
+                    var extra_id = $(this).attr("data-extra");
+                    if(check_array.indexOf(extra_id) == -1){
+                        check_array.push(extra_id);
+                       var title=$('#t'+extra_id).html();
+                        check_array.push(title);
+                        check_array.push($(this).val());
+                        var qun = parseInt($('#qun' + extra_id).val());
+                        check_array.push(qun);
+                        $("#extra"+extra_id).val(check_array);
+                    }
+                })
+            } else if ($(this).prop("checked") == false) {
+                var extra_id = $(this).attr("data-extra");
+                $("#extra"+extra_id).val('');
+            }
+        })
+
+    }
+
+})(jQuery);
+
+
+
+
